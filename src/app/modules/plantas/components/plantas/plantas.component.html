@@ -1,20 +1,26 @@
 <div class="container">
-  <table class="table w-50">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre común</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Clima</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of plantas$ | async; let  i = index">
-        <td scope="row">{{i+1}}</td>
-        <td>{{item.nombre_comun}}</td>
-        <td>{{item.tipo}}</td>
-        <td>{{item.clima}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="row">
+        <table class="table w-50">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre común</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Clima</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of plantas; let  i = index">
+                <td scope="row">{{i+1}}</td>
+                <td>{{item.nombre_comun}}</td>
+                <td>{{item.tipo}}</td>
+                <td>{{item.clima}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="row">
+        <span>Total plantas de interior: {{contador.interior}}</span>
+        <span>Total plantas de exterior: {{contador.exterior}}</span>
+    </div>
 </div>
